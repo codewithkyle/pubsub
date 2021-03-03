@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "outDir": "./",
+        "target": "ES2019",
+        "declaration": true
+    },
+    "include": [
+        "./src"
+    ],
+    "exclude": []
+}

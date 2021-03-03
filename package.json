@@ -1,0 +1,23 @@
+{
+  "name": "@codewithkyle/pubsub",
+  "version": "1.0.0",
+  "description": "A hyper-lightweight pubsub library.",
+  "main": "pubsub.js",
+  "files": [
+    "pubsub.js",
+    "pubsub.d.ts",
+    "pubsub.min.js",
+    "pubsub.min.mjs"
+  ],
+  "scripts": {
+    "build": "tsc && esbuild ./src/pubsub.ts --outfile=pubsub.min.js --format=iife --minify-whitespace --global-name=EventBus && esbuild ./src/pubsub.ts --outfile=pubsub.min.mjs --format=esm --minify",
+    "test": "serve ./test"
+  },
+  "author": "Kyle Andrews",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.8.54",
+    "serve": "^11.3.2",
+    "typescript": "^4.2.2"
+  }
+}

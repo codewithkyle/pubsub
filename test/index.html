@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+
+    <!-- Vanilla JS Test -->
+    <script src="pubsub.min.js"></script>
+    <script>
+        const ticket = EventBus.createSubscription();
+        const inbox = (data) => {
+            console.log("Inbox 1", data);
+        };
+        const inbox1Id = EventBus.subscribe(ticket, inbox);
+        setTimeout(() => {
+            EventBus.post(ticket, "Hello world!");
+        }, 5000);
+    </script>
+    <script>
+        const inbox2 = (data) => {
+            console.log("Inbox 2", data);
+            EventBus.unsubscribe(inbox2Id);
+        };
+        const inbox2Id = EventBus.subscribe(ticket, inbox2);
+    </script>
+
+    <!-- ES Module Test -->
+    <script type="module">
+        import { createSubscription, destroySubscription, post, subscribe, unsubscribe } from "./pubsub.min.mjs";
+        const ticket = createSubscription();
+        const inbox = (data) => {
+            console.log("Inbox 3", data);
+        };
+        const inbox3Id = subscribe(ticket, inbox);
+        setTimeout(() => {
+            post(ticket, "Hello world!");
+        }, 7000);
+    </script>
+</head>
+<body>
+</body>
+</html>
