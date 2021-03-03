@@ -45,7 +45,7 @@ class EventBusController {
 		}
 	}
 
-	public post(ticket: string, data: any) {
+	public publish(ticket: string, data: any) {
 		for (const id in this.subscriptions?.[ticket]) {
 			this.subscriptions[ticket][id](data);
 		}
@@ -66,7 +66,9 @@ class EventBusController {
 const EventBus:EventBusController = new EventBusController();
 const createSubscription:(ticket?:string)=>string = EventBus.create.bind(EventBus);
 const destroySubscription:(ticket:string)=>void  = EventBus.destroy.bind(EventBus);
-const post:(ticket:string, data:any)=>void  = EventBus.post.bind(EventBus);
+/** @deprecated use the `publish()` method instead */
+const post:(ticket:string, data:any)=>void  = EventBus.publish.bind(EventBus);
+const publish:(ticket:string, data:any)=>void  = EventBus.publish.bind(EventBus);
 const subscribe:(ticket:string, inbox:Function)=>string  = EventBus.subscribe.bind(EventBus);
 const unsubscribe:(inboxId:string, ticket?:string)=>void  = EventBus.unsubscribe.bind(EventBus);
-export { EventBus, createSubscription, destroySubscription, post, subscribe, unsubscribe };
+export { EventBus, createSubscription, destroySubscription, post, publish, subscribe, unsubscribe };

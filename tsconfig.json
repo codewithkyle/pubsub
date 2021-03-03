@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
         "outDir": "./",
-        "target": "ES2019",
+        "target": "ESNext",
+        "module": "ESNext",
         "declaration": true
     },
     "include": [

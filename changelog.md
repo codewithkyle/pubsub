@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2021-03-03
+
+### Added
+
+- readme CDN version number auto-bump script
+- changed the NPM versions output target from `ES2019` to `ESNext`
+- new `publish()` method -- will replace `post()`
+
+### Deprecated
+
+- `post()` method -- use `publish()` instead
+
 ## [1.0.0] - 2021-03-03
 
 ### Added
@@ -19,5 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - changelog
 - basic readme documentation
 
-[Unreleased]: https://github.com/codewithkyle/pubsub/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/codewithkyle/pubsub/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/codewithkyle/pubsub/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/codewithkyle/pubsub/releases/tag/v1.0.0

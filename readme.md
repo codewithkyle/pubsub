@@ -13,11 +13,11 @@ npm i -S @codewithkyle/pubsub
 Install via CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1.0.0/pubsub.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1.1.0/pubsub.min.js"></script>
 ```
 
 ```javascript
-import { EventBus, createSubscription, destroySubscription, post, subscribe, unsubscribe } from "https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1.0.0/pubsub.min.mjs";
+import { EventBus, createSubscription, destroySubscription, publish, subscribe, unsubscribe } from "https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1.1.0/pubsub.min.mjs";
 ```
 
 ## Usage
@@ -25,14 +25,14 @@ import { EventBus, createSubscription, destroySubscription, post, subscribe, uns
 ### ES Modules
 
 ```typescript
-import { createSubscription, destroySubscription, post, subscribe, unsubscribe } from "https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1.0.0/pubsub.min.mjs";
+import { createSubscription, destroySubscription, publish, subscribe, unsubscribe } from "https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1.1.0/pubsub.min.mjs";
 const ticket = createSubscription();
 const inbox = (data:any) => {
     console.log(data);
 };
 const inboxId = subscribe(ticket, inbox);
 setTimeout(()=>{
-    post(ticket, "Hello world");
+    publish(ticket, "Hello world");
 }, 1000);
 ```
 
@@ -45,6 +45,6 @@ const inbox = (data:any) => {
 };
 const inboxId = EventBus.subscribe(ticket, inbox);
 setTimeout(()=>{
-    EventBus.post(ticket, "Hello world");
+    EventBus.publish(ticket, "Hello world");
 }, 1000);
 ```
