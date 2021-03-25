@@ -13,11 +13,11 @@ npm i -S @codewithkyle/pubsub
 Install via CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1.1.0/pubsub.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1/pubsub.min.js"></script>
 ```
 
 ```javascript
-import { EventBus, createSubscription, destroySubscription, publish, subscribe, unsubscribe } from "https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1.1.0/pubsub.min.mjs";
+import { EventBus, createSubscription, destroySubscription, publish, subscribe, unsubscribe } from "https://cdn.jsdelivr.net/npm/@codewithkyle/pubsub@1/pubsub.min.mjs";
 ```
 
 ## Usage
