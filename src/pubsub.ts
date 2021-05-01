@@ -21,6 +21,9 @@ class EventBusController {
 
 	public subscribe(ticket: string, inbox: Function) {
 		const id = this.uid();
+		if (!this.subscriptions?.[ticket]){
+			this.create(ticket);
+		}
 		this.subscriptions[ticket][id] = inbox;
 		return id;
 	}
@@ -40,9 +43,6 @@ class EventBusController {
 			}
 		}
 		delete this.subscriptions?.[ticket]?.[id];
-		if (Object.keys(this.subscriptions?.[ticket])?.length === 0) {
-			delete this.subscriptions[ticket];
-		}
 	}
 
 	public publish(ticket: string, data: any) {

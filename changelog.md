@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2021-05-01
+
+### Fixed
+
+- subscriptions are no longer deleted when the last inbox is unsubscribed ([#1](https://github.com/codewithkyle/pubsub/issues/1))
+- create subscriptions when an inbox is registered to an invalid (missing) subscription
+
 ## [1.1.0] - 2021-03-03
 
 ### Added
