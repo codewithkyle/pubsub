@@ -10,7 +10,7 @@
     "pubsub.min.mjs"
   ],
   "scripts": {
-    "build": "tsc && esbuild ./src/pubsub.ts --outfile=pubsub.min.js --format=iife --minify-whitespace --global-name=EventBus && esbuild ./src/pubsub.ts --outfile=pubsub.min.mjs --format=esm --minify && node ./build/bump.js",
+    "build": "tsc && esbuild ./src/pubsub.ts --outfile=pubsub.min.js --format=iife --minify-whitespace --global-name=EventBus && esbuild ./src/pubsub.ts --outfile=pubsub.min.mjs --format=esm --minify",
     "test": "serve ./test"
   },
   "author": "Kyle Andrews",
